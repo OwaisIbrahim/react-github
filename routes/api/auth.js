@@ -9,6 +9,9 @@ const User = require('../../models/User');
 
 const router = express.Router();
 
+// @route   GET api/auth
+// @desc    GET Authenticate user by token
+// @access  Public
 router.get('/', auth, async (req, res) => {
   try {
     const user = await User.findById(req.user.id).select('-password');
@@ -19,7 +22,7 @@ router.get('/', auth, async (req, res) => {
   }
 });
 
-// @route   GET api/auth
+// @route   POST api/auth
 // @desc    Authenticate user & get token
 // @access  Public
 router.post(
