@@ -55,13 +55,13 @@ router.post(
 
       await user.save();
 
-      // Return jsonwebtoken
       const payload = {
         user: {
           id: user.id,
         },
       };
 
+      // Return jsonwebtoken
       jwt.sign(
         payload,
         config.get('jwtSecret'),
