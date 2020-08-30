@@ -43,3 +43,8 @@ For live server changes
 #### `npm install -D concurrently`
 
 Backend Express and react run at same time
+
+## References
+
+- Verify JWT
+  https://jwt.io/
