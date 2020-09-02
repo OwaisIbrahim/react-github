@@ -1,4 +1,6 @@
 const express = require('express');
+const config = require('config');
+const fetch = require('node-fetch');
 
 const auth = require('../../middleware/auth');
 const Profile = require('../../models/Profile');
@@ -310,6 +312,35 @@ router.delete('/education/:edu_id', auth, async (req, res) => {
   } catch (err) {
     console.log(err.message);
     res.status(500).send('Server Error');
+  }
+});
+
+// @route   GET api/github/:username
+// @desc    Get user repos from Github
+// @access  Public
+router.get('/github/:username', async (req, res) => {
+  try {
+    const uri = `https://api.github.com/users/${
+      req.params.username
+    }/repos?per_page=5&sort=created:asc&client_id=${config.get(
+      'githubClientId'
+    )}&client_secret=${config.get('githubSecret')}`;
+
+    const options = {
+      method: 'GET',
+      headers: { 'user-agent': 'node.js' },
+    };
+
+    const response = await fetch(uri, options);
+
+    if (response.status !== 200) {
+      return res.status(404).json({ msg: 'No Github profile found' });
+    }
+    const body = await response.json();
+
+    res.json(body);
+  } catch (err) {
+    console.log(err.message);
   }
 });
 
