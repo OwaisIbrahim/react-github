@@ -1,6 +1,12 @@
+## How to start
+
+- To run server only use command `npm run server'
+- To run client only use command `npm run client'
+- To run both server and client use command `npm run dev'
+
 ## DEPENDENCIES
 
-### Global Dependencies
+### Server - Global Dependencies
 
 #### `npm install express`
 
@@ -34,7 +40,7 @@ For db interaction
 
 For http request
 
-### DEV Dependencies
+### Server - DEV Dependencies
 
 #### `npm install -D nodemon`
 
@@ -43,6 +49,40 @@ For live server changes
 #### `npm install -D concurrently`
 
 Backend Express and react run at same time
+
+### Client - Global Dependencies
+
+#### `npm install axios`
+
+For HTTP request along with headers
+
+#### `npm install react-router-dom`
+
+For react routing
+
+#### `npm install redux`
+
+For state management
+
+#### `npm install react-redux`
+
+For state management at react
+
+#### `npm install redux-thunk`
+
+Middleware allow us to make async request in actions
+
+#### `npm install redux-devtools-extension`
+
+For react debugging
+
+#### `npm install moment`
+
+For date and time
+
+#### `npm install react-moment`
+
+For date and time within component
 
 ## References
 
