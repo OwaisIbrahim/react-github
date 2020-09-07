@@ -9,6 +9,14 @@ app.use(express.json({ extended: false }));
 // Connect Database
 connectDB();
 
+app.all('*', (req, res, next) => {
+  res.header('Access-Control-Allow-Origin', 'http://localhost:3000');
+  res.header(
+    'Access-Control-Allow-Headers',
+    'Content-Type, Accept, Authorization, x-auth-token'
+  );
+  next();
+});
 app.get('/', (req, res) => res.send('API Running'));
 
 // Define Routes
