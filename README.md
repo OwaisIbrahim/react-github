@@ -84,6 +84,10 @@ For date and time
 
 For date and time within component
 
+#### `npm install uuid`
+
+For Unique Id
+
 ## References
 
 - Verify JWT
