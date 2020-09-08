@@ -88,6 +88,11 @@ For date and time within component
 
 For Unique Id
 
+## CODE GENERATION
+
+- racfp - generating prop type component
+- impt - import prop types
+
 ## References
 
 - Verify JWT
